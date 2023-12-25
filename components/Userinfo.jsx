@@ -9,10 +9,18 @@ function UserInfo() {
 
     if (status === 'authenticated') {
         return (
-            <div>
-                <Image src={session?.user?.image} height={60} width={60} alt="image"/>
+            <div className="shadow-xl rounded-md p-8 flex flex-col gap-2 bg-blue-500 text-white">
+                <Image 
+                    className="rounded-full"
+                    src={session?.user?.image} 
+                    height={60} width={60} 
+                    alt="image"
+                />
                 <div>
-                    Name: <span>{session.user.name}</span>
+                    Name: <span className="font-bold">{session.user.name}</span> 
+                </div>
+                <div>
+                    Email: <span className="font-bold">{session.user.email}</span>
                 </div>
             </div>
         )
